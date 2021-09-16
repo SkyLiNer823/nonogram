@@ -24,7 +24,6 @@ function colCount(rowNum, colNum, ansArray) {
         }
         if (count != 0)
             numArray.push(count);
-        let times = 0;
         for (let k = 0; k < numArray.length; k++) {
             document.getElementById(`Col${i+1}`).innerText += numArray[k];
         }
