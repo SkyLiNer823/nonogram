@@ -1,0 +1,52 @@
+#setting {
+    display: flex;
+    justify-content: center;
+}
+
+#setting_board {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.setting_item {
+    width: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#container {
+    widows: 1000px;
+    height: 550px;
+    margin: 80px auto;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+}
+
+.hiddenBtn,
+.pressBtn,
+.hintBtn {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+    float: left;
+    border-width: 1px;
+    margin: 0px;
+}
+
+.hintBtn {
+    background-color: gray;
+}
+
+.hiddenBtn {
+    background-color: white;
+    border-width: 0px;
+    margin: 0px;
+}
