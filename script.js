@@ -8,6 +8,7 @@ function colCount(rowNum, colNum, ansArray) {
         let numArray = new Array();
         let colArray = new Array();
         count = 0;
+        t = 0;
         for (let j = 0; j < rowNum; j++)
             colArray.push(ansArray[j][i])
         for (let j = 0; j < colArray.length; j++) {
@@ -19,11 +20,17 @@ function colCount(rowNum, colNum, ansArray) {
                 else {
                     numArray.push(count);
                     count = 0;
+                    t++;
                 }
             }
         }
-        if (count != 0)
+        if (count != 0) {
             numArray.push(count);
+            t++;
+        }
+        if (t == 0) {
+            numArray.push(0);
+        }
         for (let k = 0; k < numArray.length; k++) {
             document.getElementById(`Col${i+1}`).innerText += numArray[k];
         }
@@ -34,6 +41,7 @@ function rowCount(rowNum, colNum, ansArray) {
     for (let i = 0; i < rowNum; i++) {
         let numArray = new Array();
         count = 0;
+        t = 0;
         for (let j = 0; j < colNum; j++) {
             if (ansArray[i][j] == 1) {
                 count += 1;
@@ -43,11 +51,17 @@ function rowCount(rowNum, colNum, ansArray) {
                 else {
                     numArray.push(count);
                     count = 0;
+                    t++;
                 }
             }
         }
-        if (count != 0)
+        if (count != 0) {
             numArray.push(count);
+            t++;
+        }
+        if (t == 0) {
+            numArray.push(0);
+        }
         for (let k = 0; k < numArray.length; k++) {
             document.getElementById(`Row${i+1}`).innerText += numArray[k];
         }
@@ -93,7 +107,7 @@ confirmBtn.addEventListener("click", function() {
         ansArray[i] = new Array(); //宣告二維
         for (let j = 0; j < colNum; j++) {
             let randNum = Math.floor(Math.random() * 10);
-            if (randNum <= 5)
+            if (randNum <= 6)
                 ansArray[i][j] = 1;
             else
                 ansArray[i][j] = 0;
