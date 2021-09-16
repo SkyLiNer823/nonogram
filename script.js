@@ -24,6 +24,7 @@ function colCount(rowNum, colNum, ansArray) {
         }
         if (count != 0)
             numArray.push(count);
+        let times = 0;
         for (let k = 0; k < numArray.length; k++) {
             document.getElementById(`Col${i+1}`).innerText += numArray[k];
         }
@@ -55,6 +56,20 @@ function rowCount(rowNum, colNum, ansArray) {
 
 }
 
+function check(rowNum, colNum, ansArray) {
+    let s = 0;
+    for (let i = 0; i < rowNum; i++) {
+        for (let j = 0; j < colNum; j++) {
+            if (ansArray[i][j] == 1) {
+                s = 1;
+                break;
+            }
+        }
+    }
+    if (s == 0) {
+        alert("恭喜你找出所有黑塊!!!");
+    }
+}
 
 
 confirmBtn.addEventListener("click", function() {
@@ -78,7 +93,11 @@ confirmBtn.addEventListener("click", function() {
     for (let i = 0; i < rowNum; i++) {
         ansArray[i] = new Array(); //宣告二維
         for (let j = 0; j < colNum; j++) {
-            ansArray[i][j] = Math.round(Math.random());
+            let randNum = Math.floor(Math.random() * 10);
+            if (randNum <= 5)
+                ansArray[i][j] = 1;
+            else
+                ansArray[i][j] = 0;
         }
     }
     rowCount(rowNum, colNum, ansArray);
@@ -90,11 +109,12 @@ confirmBtn.addEventListener("click", function() {
             const btnCol = i % colNum;
             if (ansArray[btnRow][btnCol] == 1) {
                 this.style.backgroundColor = "black";
+                ansArray[btnRow][btnCol] = 0;
+                check(rowNum, colNum, ansArray);
             } else {
                 if (this.style.backgroundColor != "black") {
                     this.style.backgroundColor = "red";
                     this.innerHTML = "X"
-                    ansArray[btnRow][btnCol] == 1
                 }
             }
         })
