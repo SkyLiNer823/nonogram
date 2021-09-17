@@ -18,6 +18,8 @@
 }
 
 #container {
+    position: relative;
+    bottom: 50px;
     margin: 80px auto;
     margin-right: 40px;
     display: flex;

@@ -114,7 +114,7 @@ confirmBtn.addEventListener("click", function() {
         ansArray[i] = new Array(); //宣告二維
         for (let j = 0; j < colNum; j++) {
             let randNum = Math.floor(Math.random() * 10);
-            if (randNum <= 6)
+            if (randNum <= 7)
                 ansArray[i][j] = 1;
             else
                 ansArray[i][j] = 0;
