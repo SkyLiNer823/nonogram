@@ -132,5 +132,5 @@ confirmBtn.addEventListener("click", function() {
             }
         })
     }
-    board.style.cssText = `width: ${(colNum+1)*40}px; height: ${(rowNum+1)*40}px;`;
+    board.style.cssText = `width: ${(colNum+1)*50}px; height: ${(rowNum+1)*50}px;`;
 })
