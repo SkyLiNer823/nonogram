@@ -116,6 +116,7 @@ confirmBtn.addEventListener("click", function() {
     rowCount(rowNum, colNum, ansArray);
     colCount(rowNum, colNum, ansArray);
     let pressBtn = document.getElementsByClassName("pressBtn");
+    let hintBtn = document.getElementsByClassName("hintBtn");
     for (let i = 0; i < pressBtn.length; i++) {
         pressBtn[i].addEventListener("click", function() {
             const btnRow = Math.floor(i / colNum);
@@ -130,6 +131,11 @@ confirmBtn.addEventListener("click", function() {
                     this.innerHTML = "X"
                 }
             }
+        })
+    }
+    for (let i = 0; i < hintBtn.length; i++) {
+        hintBtn[i].addEventListener("click", function() {
+            alert(hintBtn[i].innerText);
         })
     }
     board.style.cssText = `width: ${(colNum+1)*50}px; height: ${(rowNum+1)*50}px;`;
