@@ -98,8 +98,8 @@ confirmBtn.addEventListener("click", function() {
         lifeNum = 1;
     if (difficultNum < 1)
         difficultNum = 1;
-    else if (difficultNum > 5)
-        difficultNum = 5;
+    else if (difficultNum > 3)
+        difficultNum = 3;
 
     document.getElementById("nowLife").innerText = lifeNum;
     let nowlife = document.getElementById("nowLife").innerText
@@ -124,7 +124,7 @@ confirmBtn.addEventListener("click", function() {
         ansArray[i] = new Array(); //宣告二維
         for (let j = 0; j < colNum; j++) {
             let randNum = Math.floor(Math.random() * 10);
-            if (randNum <= 10 - difficultNum)
+            if (randNum <= 8 - difficultNum)
                 ansArray[i][j] = 1;
             else
                 ansArray[i][j] = 0;
