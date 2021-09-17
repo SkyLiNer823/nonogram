@@ -2,8 +2,12 @@ const row = document.getElementById("row")
 const col = document.getElementById("col")
 const confirmBtn = document.getElementById("confirmBtn")
 const board = document.getElementById('board')
+const rowHintboard = document.getElementById('rowHintboard')
+const colHintboard = document.getElementById('colHintboard')
+
 
 function colCount(rowNum, colNum, ansArray) {
+    colHintboard.innerHTML = ''
     for (let i = 0; i < colNum; i++) {
         let numArray = new Array();
         let colArray = new Array();
@@ -32,12 +36,14 @@ function colCount(rowNum, colNum, ansArray) {
             numArray.push(0);
         }
         for (let k = 0; k < numArray.length; k++) {
-            document.getElementById(`Col${i+1}`).innerText += numArray[k];
+            document.getElementById(`Col${i+1}`).innerText += String(numArray[k]) + ".";
         }
+        colHintboard.innerHTML += `<br>Col${i+1}: ${document.getElementById(`Col${i+1}`).innerText}</br>`
     }
 }
 
 function rowCount(rowNum, colNum, ansArray) {
+    rowHintboard.innerHTML = ''
     for (let i = 0; i < rowNum; i++) {
         let numArray = new Array();
         count = 0;
@@ -63,8 +69,9 @@ function rowCount(rowNum, colNum, ansArray) {
             numArray.push(0);
         }
         for (let k = 0; k < numArray.length; k++) {
-            document.getElementById(`Row${i+1}`).innerText += numArray[k];
+            document.getElementById(`Row${i+1}`).innerText += String(numArray[k])+".";
         }
+        rowHintboard.innerHTML+=`<br>Row${i+1}: ${document.getElementById(`Row${i+1}`).innerText}</br>`
     }
 
 }
