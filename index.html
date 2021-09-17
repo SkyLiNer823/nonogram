@@ -7,26 +7,31 @@
 </head>
 
 <body>
-    <div id="setting">
-        <div id="setting_board">
-            <b>版面配置:</b>
-            <input type="text" id="row" class="setting_item" placeholder="Rows">
-            <b>×</b>
-            <input type="text" id="col" class="setting_item" placeholder="Cols">
-            <button id="confirmBtn">確定 / 重置</button>
-        </div>
+    <div id="settingBoard">
+        <b>版面配置:</b>
+        <input type="text" id="row" class="settingItem" placeholder="Rows">
+        <b>×</b>
+        <input type="text" id="col" class="settingItem" placeholder="Cols">
     </div>
-    <div id='warning'>
+    <div id="difficultBoard">
+        <b>難度:</b>
+        <input type="text" id="difficult" placeholder="1~5">
+        <b>生命值:</b>
+        <input type="text" id="life" value="3">
+    </div>
+    <div id="confirmBtnBoard">
+        <button id="confirmBtn">確定 / 重置</button>
+    </div>
+    <div id='warningBoard'>
         <b>提示: 如果版面亂掉請重新縮放頁面大小，點擊灰框可以得到完整提示</b>
     </div>
-
+    <div id="nowLifeBoard">
+        <b id="nowLifeText">當前生命值:</b>
+        <div id="nowLife">0</div>
+    </div>
     </div>
     <div id="container">
-        <div id="board">
-        </div>
-        <div id="rowHintboard" class="hintboard">
-        </div>
-        <div id="colHintboard" class="hintboard">
+        <div id="Board">
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">

@@ -1,48 +1,46 @@
-#setting,
-#warning {
+#settingBoard,
+#difficultBoard,
+#confirmBtnBoard,
+#warningBoard,
+#nowLifeBoard {
     display: flex;
     justify-content: center;
-}
-
-#setting_board {
     position: relative;
-    display: flex;
     flex-direction: row;
     margin: 10px;
 }
 
-.setting_item {
-    width: 50px;
+#nowLifeText {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#nowLife {
+    font-size: 30px;
+    color: red;
+    margin-left: 10px;
+}
+
+.settingItem,
+#difficult,
+#life {
+    width: 35px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 #container {
     position: relative;
-    bottom: 50px;
-    margin: 80px auto;
+    margin: auto;
     margin-right: 40px;
     display: flex;
     justify-content: center;
 }
 
-#board {
+#Board {
     position: relative;
     width: 500px;
     height: 500px;
-}
-
-.hintboard {
-    position: relative;
-    font-size: 20px;
-}
-
-#rowHintboard {
-    left: 30px;
-}
-
-#colHintboard {
-    left: 60px;
 }
 
 .hiddenBtn,
